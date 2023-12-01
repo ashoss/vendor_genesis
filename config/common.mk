@@ -202,6 +202,9 @@ CUSTOM_LOCALES += \
     cy_GB \
     fur_IT
 
+# Certification
+$(call inherit-product-if-exists, vendor/certification/config.mk)
+
 # Fonts
 include vendor/genesis/config/fonts.mk
 
