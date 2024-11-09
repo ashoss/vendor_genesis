@@ -98,8 +98,13 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Bootanimation
+ifeq ($(TARGET_PIXEL_BOOT_ANIMATION),true)
+PRODUCT_COPY_FILES += \
+    vendor/genesis/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+else
 PRODUCT_COPY_FILES += \
     vendor/genesis/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+endif
 
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \
